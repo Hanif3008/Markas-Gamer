@@ -1,0 +1,144 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#11131c;overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary-fixed": "#ffd9e1",
+        "inverse-surface": "#e1e1ef",
+        "error-container": "#93000a",
+        "surface-bright": "#373943",
+        "surface-container": "#1d1f29",
+        "on-secondary-fixed-variant": "#5516be",
+        "on-primary-fixed-variant": "#8f0045",
+        "tertiary-container": "#009eb9",
+        "primary-container": "#ff2a85",
+        "inverse-primary": "#ba005c",
+        "secondary-fixed": "#e9ddff",
+        "on-tertiary-fixed-variant": "#004e5c",
+        "on-tertiary-fixed": "#001f26",
+        "on-primary-container": "#ffffff",
+        "surface-container-low": "#191b25",
+        "surface-container-high": "#282933",
+        "primary-fixed-dim": "#ffb1c5",
+        "tertiary-fixed": "#acedff",
+        "outline-variant": "#34384a",
+        "on-error": "#690005",
+        "secondary-fixed-dim": "#d0bcff",
+        "on-primary-fixed": "#3f001b",
+        "surface-variant": "#32343e",
+        "on-surface-variant": "#9ba0b4",
+        "surface-tint": "#ff2a85",
+        "surface-container-lowest": "#0c0e17",
+        "on-tertiary": "#003640",
+        "on-primary": "#ffffff",
+        "surface-dim": "#11131c",
+        "surface-container-highest": "#32343e",
+        "on-secondary": "#3c0091",
+        "on-error-container": "#ffdad6",
+        "tertiary": "#4cd7f6",
+        "on-secondary-container": "#c4abff",
+        "on-tertiary-container": "#002f38",
+        "on-surface": "#e1e1ef",
+        "surface": "#11131c",
+        "inverse-on-surface": "#2e303a",
+        "primary": "#ff2a85",
+        "error": "#ff5c7c",
+        "on-secondary-fixed": "#23005c",
+        "secondary-container": "#241836",
+        "background": "#11131c",
+        "secondary": "#d0bcff",
+        "tertiary-fixed-dim": "#4cd7f6",
+        "outline": "#5a5e74",
+        "on-background": "#e1e1ef"
+      },
+      borderRadius: {
+        "DEFAULT": "1rem",
+        "lg": "2rem",
+        "xl": "3rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "space-md": "1rem",
+        "space-xs": "0.25rem",
+        "space-xl": "2rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "margin": "1rem",
+        "gutter": "1rem"
+      },
+      fontFamily: {
+        "title-sm": ["Plus Jakarta Sans", "sans-serif"],
+        "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+        "label-md": ["Plus Jakarta Sans", "sans-serif"],
+        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+        "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+        "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+        "display-hero": ["Plus Jakarta Sans", "sans-serif"],
+        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+        "mono-stat": ["JetBrains Mono", "monospace"],
+        "mono-telemetry": ["JetBrains Mono", "monospace"]
+      }
+    }
+  }
+};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary selection:text-white"><header class="fixed top-0 inset-x-0 z-50 bg-[#11131c]/80 backdrop-blur-xl pt-safe border-b border-white/[0.06] shadow-[0_8px_24px_rgba(255,42,133,0.45)]"><div class="absolute inset-0 bg-gradient-to-r from-[#ff2a85]/15 via-[#c026d3]/10 to-transparent pointer-events-none"></div><div class="flex items-center justify-between h-16 px-margin max-w-[428px] mx-auto"><div class="flex items-center gap-space-sm min-w-0"><div class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#ff2a85] to-[#c026d3] flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(255,42,133,0.6)] ring-1 ring-white/20"><span class="material-symbols-outlined text-[20px] text-white" style="font-variation-settings: 'FILL' 1;">radar</span></div><div class="flex flex-col truncate"><span class="font-mono-telemetry text-[10px] text-[#ff2a85] font-bold tracking-widest uppercase leading-none">STEAMLOG Spot Finder</span><span class="font-headline-md text-[17px] text-white font-bold truncate leading-tight">Radar Spot Warnet</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Search" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/[0.05] border border-white/[0.08] text-on-surface hover:text-[#ff2a85] hover:border-[#ff2a85]/50 transition-all" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><div class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#ff2a85] to-[#c026d3] flex items-center justify-center flex-shrink-0 ml-space-xs shadow-[0_0_12px_rgba(255,42,133,0.4)]"><span class="material-symbols-outlined text-white text-[19px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full max-w-[428px] mx-auto px-margin pt-16 pb-24 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Interactive Tactical Map Viewport -->
+<div class="relative w-full h-[370px] rounded-[2rem] overflow-hidden bg-surface-container-lowest shadow-2xl border border-white/[0.08]"><div class="absolute inset-0 w-full h-full bg-cover bg-center brightness-[0.75] contrast-[1.25] saturate-[1.3]" data-alt="Tactical dark nocturnal cartographic vector map of downtown Bandung centered on Braga Street, displaying minimal slate-blue city blocks, indigo roads with glowing cyber-cyan arterials, dark navy river curves, sleek low-light HUD navigation overlays, and high tech gaming aesthetic." data-location="Jl. Braga No. 15, Sumur Bandung, Kota Bandung, Jawa Barat" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD7SqQHXL0Lxwaz30XnF3OAygqLyvRM-4yP8IpOJvpaEUnSRfk9LGJDkeoLQTyGWzD2LEZsLDehFhrDp-Kz9NiCyOOjRtK9gZT571-hGoaFjpoqiVMzEJb8mvrpT9biwkytehlh6HjycYxlOtHzI17CNFa1F7nx9ZaXujYyJUE2sMYC4-R20H6WjkzqLWMytBHYgGemnPxRyYiGO8DPbm0hM7XxZRWTtW77VJ2X2w&quot;);"></div><div class="absolute inset-0 bg-gradient-to-b from-[#0c0e17]/80 via-transparent to-[#11131c] pointer-events-none"></div><div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#ff2a85_1px,transparent_1px)] [background-size:20px_20px]"></div><div class="absolute top-3.5 left-3.5 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#11131c]/90 backdrop-blur-md border border-[#ff2a85]/40 shadow-[0_4px_16px_rgba(0,0,0,0.6)]"><span class="material-symbols-outlined text-[16px] text-[#ff2a85] animate-spin" style="animation-duration: 8s; font-variation-settings: 'FILL' 1;">radar</span><span class="font-mono-telemetry text-[11px] text-white font-semibold tracking-wide">Bandung Gaming Zone</span></div><button aria-label="Pusatkan Peta" class="absolute top-3.5 right-3.5 w-10 h-10 rounded-full bg-[#11131c]/90 backdrop-blur-md border border-white/[0.12] flex items-center justify-center text-white hover:text-[#ff2a85] hover:border-[#ff2a85]/50 transition-all active:scale-95 shadow-[0_4px_16px_rgba(0,0,0,0.6)]" id="btn-recenter" type="button"><span class="material-symbols-outlined text-[20px]">my_location</span></button><div class="absolute right-3.5 top-1/2 -translate-y-1/2 flex flex-col rounded-full bg-[#11131c]/90 backdrop-blur-md border border-white/[0.12] shadow-xl overflow-hidden"><button aria-label="Perbesar" class="w-10 h-10 flex items-center justify-center text-white hover:text-[#ff2a85] transition-colors active:bg-white/[0.1]" id="btn-zoom-in" type="button"><span class="material-symbols-outlined text-[20px]">add</span></button><div class="w-5 h-px mx-auto bg-white/[0.1]"></div><button aria-label="Perkecil" class="w-10 h-10 flex items-center justify-center text-white hover:text-[#ff2a85] transition-colors active:bg-white/[0.1]" id="btn-zoom-out" type="button"><span class="material-symbols-outlined text-[20px]">remove</span></button></div><div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="absolute w-48 h-48 rounded-full bg-[#ff2a85]/15 border border-[#ff2a85]/30 shadow-[0_0_30px_rgba(255,42,133,0.35)] animate-pulse"></div><div class="absolute w-28 h-28 rounded-full bg-[#ff2a85]/10"></div><div class="absolute w-56 h-px bg-[#ff2a85]/25"></div><div class="absolute h-56 w-px bg-[#ff2a85]/25"></div><div class="relative flex flex-col items-center pointer-events-auto cursor-pointer transform -translate-y-3 transition-transform hover:scale-110"><div class="relative flex items-center justify-center"><div class="w-9 h-9 rounded-full bg-gradient-to-tr from-[#ff2a85] to-[#ec4899] flex items-center justify-center shadow-[0_0_20px_rgba(255,42,133,0.85)] ring-2 ring-white/40"><span class="material-symbols-outlined text-white text-[19px]" style="font-variation-settings: 'FILL' 1;">sports_esports</span></div><span class="absolute w-2 h-2 rounded-full bg-[#11131c]"></span></div><div class="w-1.5 h-1.5 rounded-full bg-[#ff2a85] shadow-[0_0_8px_#ff2a85] mt-0.5"></div></div></div><div class="absolute top-14 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#11131c]/90 backdrop-blur-md border border-[#ff2a85]/50 shadow-[0_4px_16px_rgba(0,0,0,0.6)] animate-bounce" style="animation-duration: 3s;"><div class="w-2 h-2 rounded-full bg-[#00e599] shadow-[0_0_8px_#00e599]"></div><div class="flex flex-col"><span class="font-title-sm text-[11px] text-white leading-tight font-bold">CyberZone LAN Arena</span><span class="font-mono-telemetry text-[10px] text-[#00e599] leading-none font-semibold">1.2 km • 144Hz Rig • Ready</span></div></div><div class="absolute top-28 right-5 flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#11131c]/90 backdrop-blur-md border border-white/[0.12] shadow-[0_4px_14px_rgba(0,0,0,0.5)]"><div class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#4cd7f6]"></div><div class="flex flex-col"><span class="font-title-sm text-[10px] text-white leading-tight font-bold">Level 9 Esports</span><span class="font-mono-telemetry text-[9px] text-tertiary leading-none">2.8 km • RTX 4080 VIP</span></div></div><div class="absolute bottom-8 left-6 flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#11131c]/90 backdrop-blur-md border border-white/[0.12] shadow-[0_4px_14px_rgba(0,0,0,0.5)]"><div class="w-2 h-2 rounded-full bg-[#ff2a85] shadow-[0_0_8px_#ff2a85]"></div><div class="flex flex-col"><span class="font-title-sm text-[10px] text-white leading-tight font-bold">BattleStation Cafe</span><span class="font-mono-telemetry text-[9px] text-on-surface-variant leading-none">800m • Snack &amp; PC</span></div></div><div class="absolute bottom-2 right-4 flex items-center gap-1 opacity-70"><span class="material-symbols-outlined text-[12px] text-outline">sports_esports</span><span class="font-mono-telemetry text-[10px] text-outline uppercase tracking-wider">SteamLog Radar Live</span></div></div>
+<!-- Map Telemetry Bottom Sheet Surface -->
+<div class="relative -mt-6 z-10 w-full rounded-t-[2.5rem] bg-gradient-to-b from-[#191b25] to-[#11131c] px-margin pt-3 pb-6 flex flex-col gap-3.5 border-t border-white/[0.08] shadow-[0_-12px_36px_rgba(0,0,0,0.7)]"><div class="w-12 h-1 bg-white/20 rounded-full mx-auto my-1"></div><div class="flex items-center justify-between"><div class="flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00e599]/15 border border-[#00e599]/30 shadow-[0_0_12px_rgba(0,229,153,0.15)]"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00e599] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#00e599] shadow-[0_0_6px_#00e599]"></span></span><span class="font-mono-telemetry text-[11px] text-[#00e599] tracking-wide font-semibold">Radar Spot Aktif (3 Spot Ditemukan)</span></div><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/[0.08]"><span class="material-symbols-outlined text-[14px] text-tertiary">wifi</span><span class="font-mono-telemetry text-[11px] text-tertiary font-semibold">Ping: 8ms (Ultra Low)</span></div></div><div class="flex flex-col p-3.5 rounded-2xl bg-white/[0.03] border border-[#ff2a85]/30 gap-2 shadow-[0_4px_20px_rgba(255,42,133,0.12)]"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-[#ff2a85]">verified</span><span class="font-label-sm text-[11px] text-[#ff2a85] font-bold tracking-wider uppercase">SPOT UTAMA TERDEKAT</span></div><span class="px-2 py-0.5 rounded-full bg-[#00e599]/15 text-[#00e599] font-mono-telemetry text-[10px] font-bold border border-[#00e599]/30">12 PC Tersedia</span></div><div class="flex flex-col"><h3 class="font-headline-md text-[16px] text-white font-bold leading-tight">CyberZone Esports Arena &amp; PC Lounge</h3><p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">Jl. Braga No. 15, Sumur Bandung • 1.2 km dari lokasimu</p><p class="font-mono-telemetry text-[11px] text-tertiary mt-0.5 font-medium">Buka 24 Jam • Tarif: Rp 8.000 / Jam • High-End Rig</p></div><div class="flex flex-wrap gap-1.5 pt-1"><span class="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] font-mono-telemetry text-[10px] text-white">RTX 4070 Ti</span><span class="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] font-mono-telemetry text-[10px] text-white">240Hz Monitor</span><span class="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] font-mono-telemetry text-[10px] text-white">Private VIP Room</span><span class="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] font-mono-telemetry text-[10px] text-white">Gigabit LAN Fiber</span><span class="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] font-mono-telemetry text-[10px] text-white">Snack &amp; Coffee Bar</span></div><div class="pt-1"><button class="w-full py-2.5 rounded-full bg-gradient-to-r from-[#ff2a85] to-[#c026d3] text-white font-title-sm text-[13px] flex items-center justify-center gap-1.5 shadow-[0_0_16px_rgba(255,42,133,0.4)] hover:shadow-[0_0_24px_rgba(255,42,133,0.6)] active:scale-[0.98] transition-all font-bold" id="btn-route-spot" type="button"><span class="material-symbols-outlined text-[17px]">turn_right</span><span>Petunjuk Arah ke Arena</span></button></div></div><div class="flex flex-col gap-2"><div class="flex items-center justify-between px-1"><span class="font-label-sm text-[11px] text-on-surface-variant font-bold uppercase tracking-wider">Spot Alternatif Terdekat</span><span class="font-mono-telemetry text-[10px] text-[#ff2a85] font-semibold">Lihat Semua (8)</span></div><div class="flex gap-2.5 overflow-x-auto pb-1"><div class="flex-shrink-0 w-48 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#ff2a85]/40 transition-colors flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-title-sm text-[12px] text-white font-bold truncate">Level 9 Arena</span><span class="font-mono-telemetry text-[10px] text-[#00e599]">6 PC</span></div><span class="font-body-sm text-[10px] text-on-surface-variant">2.8 km • Dago Bawah</span><span class="font-mono-telemetry text-[10px] text-tertiary font-semibold">Rp 10k/jam • RTX 4080</span></div><div class="flex-shrink-0 w-48 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#ff2a85]/40 transition-colors flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-title-sm text-[12px] text-white font-bold truncate">ROG Lounge Hub</span><span class="font-mono-telemetry text-[10px] text-tertiary">Penuh</span></div><span class="font-body-sm text-[10px] text-on-surface-variant">3.5 km • Riau Area</span><span class="font-mono-telemetry text-[10px] text-on-surface-variant">Rp 12k/jam • ROG Rig</span></div><div class="flex-shrink-0 w-48 p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-[#ff2a85]/40 transition-colors flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-title-sm text-[12px] text-white font-bold truncate">BattleStation Cafe</span><span class="font-mono-telemetry text-[10px] text-[#00e599]">4 PC</span></div><span class="font-body-sm text-[10px] text-on-surface-variant">800m • Veteran</span><span class="font-mono-telemetry text-[10px] text-tertiary font-semibold">Rp 7k/jam • Snack Bar</span></div></div></div><button class="w-full h-12 py-3 rounded-full bg-white/[0.06] hover:bg-[#ff2a85]/20 text-white font-title-sm text-[13px] flex items-center justify-center gap-2 active:scale-[0.98] transition-all border border-[#ff2a85]/40 shadow-[0_0_14px_rgba(255,42,133,0.2)]" id="btn-refresh-gps" type="button"><span class="material-symbols-outlined text-[18px] text-[#ff2a85] transition-transform" id="refresh-icon">radar</span><span class="font-bold tracking-wide text-white" id="refresh-text">Perbarui Radar Spot</span></button></div>
+</div>
+<script>
+  // Micro-interaction handlers for Lokasi & Peta
+  (function() {
+    const copyBtn = document.getElementById('btn-copy-coords');
+    const copyIcon = document.getElementById('copy-icon');
+    const refreshBtn = document.getElementById('btn-refresh-gps');
+    const refreshIcon = document.getElementById('refresh-icon');
+    const refreshText = document.getElementById('refresh-text');
+    const recenterBtn = document.getElementById('btn-recenter');
+
+    if (copyBtn && copyIcon) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard?.writeText('-6.91750, 107.61910');
+        copyIcon.textContent = 'done';
+        copyIcon.classList.add('text-[#00e599]');
+        setTimeout(() => {
+          copyIcon.textContent = 'content_copy';
+          copyIcon.classList.remove('text-[#00e599]');
+        }, 1800);
+      });
+    }
+
+    if (refreshBtn && refreshIcon && refreshText) {
+      refreshBtn.addEventListener('click', () => {
+        refreshIcon.classList.add('animate-spin');
+        refreshText.textContent = 'Mengunci Satelit GPS...';
+        refreshBtn.disabled = true;
+
+        setTimeout(() => {
+          refreshIcon.classList.remove('animate-spin');
+          refreshText.textContent = 'Posisi Diperbarui!';
+          setTimeout(() => {
+            refreshText.textContent = 'Perbarui Posisi';
+            refreshBtn.disabled = false;
+          }, 1400);
+        }, 1200);
+      });
+    }
+
+    if (recenterBtn) {
+      recenterBtn.addEventListener('click', () => {
+        recenterBtn.classList.add('rotate-45');
+        setTimeout(() => {
+          recenterBtn.classList.remove('rotate-45');
+        }, 300);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 bg-[#11131c]/90 backdrop-blur-xl pb-safe border-t border-white/[0.08]" data-active-classes="[&amp;_.nav-pill]:bg-[#ff2a85]/20 [&amp;_.nav-pill]:border-[#ff2a85]/40 [&amp;_.nav-icon]:text-[#ff2a85] [&amp;_.nav-label]:text-white [&amp;_.nav-label]:font-bold"><div class="flex justify-around items-center h-16 px-space-md max-w-[428px] mx-auto"><a class="flex flex-col items-center justify-center min-w-[72px] h-12 gap-1 group" data-path="beranda" href="#"><div class="nav-pill px-4 py-1 rounded-full transition-all duration-200 flex items-center justify-center border border-transparent"><span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant group-hover:text-[#ff2a85] transition-colors">sports_esports</span></div><span class="nav-label font-label-sm text-label-sm text-on-surface-variant group-hover:text-white transition-colors">Beranda</span></a><a class="flex flex-col items-center justify-center min-w-[72px] h-12 gap-1 group" data-path="catatan" href="#"><div class="nav-pill px-4 py-1 rounded-full transition-all duration-200 flex items-center justify-center border border-transparent"><span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant group-hover:text-[#ff2a85] transition-colors">menu_book</span></div><span class="nav-label font-label-sm text-label-sm text-on-surface-variant group-hover:text-white transition-colors">Catatan</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[72px] h-12 gap-1 group [&amp;_.nav-pill]:bg-[#ff2a85]/20 [&amp;_.nav-pill]:border-[#ff2a85]/50 [&amp;_.nav-pill]:shadow-[0_0_14px_rgba(255,42,133,0.35)] [&amp;_.nav-icon]:text-[#ff2a85] [&amp;_.nav-label]:text-white [&amp;_.nav-label]:font-bold" data-path="lokasi" href="#"><div class="nav-pill px-4 py-1 rounded-full transition-all duration-200 flex items-center justify-center border border-transparent"><span class="material-symbols-outlined nav-icon text-[22px] text-[#ff2a85] transition-colors" style="font-variation-settings: 'FILL' 1;">explore</span></div><span class="nav-label font-label-sm text-label-sm text-white font-bold transition-colors">Lokasi</span></a></div><div class="w-full flex justify-center pb-2"><div class="w-32 h-1 bg-white/20 rounded-full"></div></div></nav>
+
+<span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span></body></html>

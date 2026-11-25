@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #0c0e17;
+        overscroll-behavior-y: none;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#11131c",
+            "surface-dim": "#11131c",
+            "surface-bright": "#373943",
+            "surface-container-lowest": "#0c0e17",
+            "surface-container-low": "#181a26",
+            "surface-container": "#1e2233",
+            "surface-container-high": "#272c40",
+            "surface-container-highest": "#333952",
+            "surface-variant": "#2b3046",
+            "on-surface": "#f1f1f9",
+            "on-surface-variant": "#9ba3c0",
+            "background": "#0c0e17",
+            "on-background": "#f1f1f9",
+            "primary": "#ff2a85",
+            "primary-container": "#ff2a85",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#ffffff",
+            "primary-fixed": "#ffd9e1",
+            "primary-fixed-dim": "#ffb1c5",
+            "secondary": "#d0bcff",
+            "secondary-container": "#571bc1",
+            "on-secondary": "#ffffff",
+            "tertiary": "#4cd7f6",
+            "tertiary-container": "#009eb9",
+            "outline": "#4a5170",
+            "outline-variant": "#282d42"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .neon-glow-pink {
+      box-shadow: 0 0 24px -2px rgba(255, 42, 133, 0.55);
+    }
+    .neon-pill-glow {
+      box-shadow: 0 0 16px 0px rgba(255, 42, 133, 0.4);
+    }
+    .card-border {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface flex flex-col min-h-screen selection:bg-primary selection:text-white">
+<!-- Header -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#0c0e17]/85 backdrop-blur-xl pt-safe border-b border-white/[0.06]">
+<div class="flex items-center justify-between h-16 px-4 max-w-[428px] mx-auto">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-8 h-8 rounded-full bg-gradient-to-tr from-[#ff2a85] to-[#7c3aed] p-[1.5px] flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(255,42,133,0.35)]">
+<div class="w-full h-full bg-[#11131c] rounded-full flex items-center justify-center overflow-hidden">
+<img alt="SteamLog Logo" class="h-5 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDCfLh_lYmCEuZPSWrF9FeWMcIjDYak9ZsQlFv4W7j4uJBOWbO9JrhROgWs8hMB9Wqk6M46No7LmuwtDxJVi6QeXcUypx_hFpUb2vu-FU1rNaaWd5gCtHlxo2LHaihLKPpzD1kN3Jh7VjVebNeOhqO78QJKW_JbSBdA8UIuNdInPnx2pWqwM-y1bNZqJG_rN1j95HuoNu8E-Oe6KAJ9N5N19W14iJVyp_oqmtbYU0I"/>
+</div>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-mono text-[10px] text-[#ff2a85] font-bold tracking-widest uppercase leading-none">SteamLog Hub</span>
+<span class="text-[17px] font-bold text-white tracking-tight truncate">Beranda</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<button aria-label="Search" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:text-white hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#ff2a85] to-[#f43f5e] flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(255,42,133,0.4)]">
+<span class="material-symbols-outlined text-white text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col relative w-full max-w-[428px] mx-auto px-4 pt-20 pb-28 bg-[#0c0e17]">
+<!-- Ambient Synthwave Background Blur -->
+<div class="absolute top-0 inset-x-0 h-96 pointer-events-none overflow-hidden z-0">
+<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[390px] h-[280px] rounded-full bg-gradient-to-b from-[#ff2a85] via-[#ff5e3a] to-[#7928ca] opacity-30 blur-[80px]"></div>
+<div class="absolute top-10 left-1/2 -translate-x-1/2 w-80 h-44 rounded-full bg-gradient-to-tr from-[#ff007a] via-[#9333ea] to-[#4cd7f6] opacity-25 blur-2xl"></div>
+</div>
+<div class="flex flex-col w-full space-y-5 relative z-10">
+<!-- Top Ambient Status Strip -->
+<div class="flex items-center justify-between px-3.5 py-2 rounded-full bg-[#181b28] card-border shadow-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="relative flex h-2 w-2 flex-shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff2a85] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#ff2a85]"></span>
+</span>
+<span class="font-mono text-[11px] font-semibold text-[#ff2a85] tracking-wider truncate">STEAMLOG // PRAKTIKUM_ACTIVE</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant font-medium flex-shrink-0">GPS + SQLITE • v1.0</span>
+</div>
+<!-- Hero Banner: SteamLog & LAN Tracker (Vice City Aesthetic) -->
+<div class="relative overflow-hidden rounded-[26px] bg-[#171926] card-border shadow-[0_16px_40px_rgba(0,0,0,0.65)] flex flex-col">
+<!-- Artwork Header with Gradient Overlays -->
+<div class="relative w-full h-56 overflow-hidden">
+<img alt="Vice City Synthwave Artwork" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida/ALJJyrBTWfUZMtEIvFNd_BHDzfENBpxdpxmL5DGRO66ecGDhNshS1VB63-2qN43ejPORyzlfJ9-VeTws_vvLmZ7XrEFtt2QcZv5uz4dQ3Y_opCLuFWpA71bz75e_ssS59fXWAXlKGkqU52deYlIqiFUbPSdgimSm34O6XCCEt6hvkRS8CX0EFvUdeiCTGmiHKTe6b_vUQTtnU9hrCPolKA_TqbRr_SiPKsykrx0HqLC6YRs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#171926] via-[#171926]/40 to-black/40"></div>
+<div class="absolute top-0 inset-x-0 h-14 bg-gradient-to-b from-black/60 to-transparent"></div>
+<!-- Top floating badges -->
+<div class="absolute top-3 inset-x-3 flex items-center justify-between z-10">
+<span class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-white font-mono text-[10px] font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#4cd7f6] animate-pulse"></span>
+Steam PC Gamer • Day 1
+</span>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-[#ff2a85]/25 border border-[#ff2a85]/40 text-[#ffb1c5] font-mono text-[10px] font-bold">
+db_steam_v1
+</span>
+</div>
+</div>
+<!-- Bottom Status Badges on Image -->
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-full bg-[#ff2a85] text-white font-bold text-[10px] tracking-wider uppercase shadow-[0_0_12px_rgba(255,42,133,0.6)] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+GPS Fix: 3D Active
+</span>
+<span class="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[#4cd7f6] font-mono text-[10px] font-bold">
+OSM Online
+</span>
+</div>
+</div>
+<!-- Hero Details Body -->
+<div class="p-5 flex flex-col gap-3">
+<div class="flex flex-col">
+<h1 class="text-[22px] font-extrabold text-white leading-tight tracking-tight">SteamLog &amp; LAN Tracker</h1>
+<p class="text-[13px] text-on-surface-variant mt-1 leading-relaxed">
+Backlog Game PC (SQLite) &amp; Spot Gaming (GPS + OSM). Pantau sesi bermain, lokasi warnet, dan riwayat gaming dalam satu dashboard.
+</p>
+</div>
+<!-- Quick Action Row -->
+<div class="flex items-center gap-3 pt-1">
+<a class="flex-1 flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-gradient-to-r from-[#ff2a85] to-[#f43f5e] text-white font-bold text-[13px] neon-glow-pink hover:brightness-110 active:scale-95 transition-all shadow-[0_8px_24px_rgba(255,42,133,0.45)]" href="#">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Catatan Game Baru</span>
+</a>
+<button aria-label="Sync Telemetri" class="w-11 h-11 rounded-full bg-[#202538] border border-white/10 flex items-center justify-center text-[#4cd7f6] hover:bg-[#282f48] active:scale-95 transition-transform shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Section: Menu Praktikum -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-[#ff2a85]">terminal</span>
+<h2 class="text-[17px] font-bold text-white tracking-tight">Menu Praktikum</h2>
+</div>
+<span class="px-3 py-0.5 rounded-full bg-[#ff2a85]/15 text-[#ff2a85] border border-[#ff2a85]/30 text-[11px] font-bold tracking-wide">2 Modul Siap</span>
+</div>
+<!-- Hands-on Module Cards -->
+<div class="flex flex-col gap-3">
+<!-- Modul 1: Backlog & Catatan Game (CRUD SQLite) -->
+<a class="group relative flex flex-col p-4 rounded-[22px] bg-[#1a1d2d] hover:bg-[#202538] transition-all duration-200 card-border shadow-md active:scale-[0.99]" href="#">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3.5 min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#ff2a85]/20 to-[#ff2a85]/5 border border-[#ff2a85]/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(255,42,133,0.25)] text-[#ff2a85] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">sports_esports</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-[15px] font-bold text-white group-hover:text-[#ff2a85] transition-colors leading-snug truncate">Backlog &amp; Catatan Game</h3>
+<span class="px-2 py-0.5 rounded-full bg-[#ff2a85]/20 text-[#ff2a85] text-[10px] font-bold font-mono">MODUL 1</span>
+</div>
+<p class="text-[13px] text-on-surface-variant mt-0.5 leading-relaxed">CRUD SQLite (sqflite) &amp; jarak lokasi bermain.</p>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant group-hover:text-[#ff2a85] group-hover:translate-x-0.5 transition-all pt-1">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-3 pt-1 flex-wrap">
+<span class="px-2.5 py-1 rounded-full bg-[#262b40] text-[#ffd9e1] font-mono text-[11px] flex items-center gap-1 border border-white/[0.06]">
+<span class="material-symbols-outlined text-[13px] text-[#ff2a85]">database</span>
+SQLite + Haversine
+</span>
+<span class="px-2.5 py-1 rounded-full bg-[#262b40] text-on-surface-variant font-mono text-[11px] flex items-center gap-1 border border-white/[0.06]">
+<span class="material-symbols-outlined text-[13px] text-[#4cd7f6]">offline_pin</span>
+CRUD Offline
+</span>
+</div>
+</a>
+<!-- Modul 2: Spot Gaming & Peta (GPS + OSM) -->
+<a class="group relative flex flex-col p-4 rounded-[22px] bg-[#1a1d2d] hover:bg-[#202538] transition-all duration-200 card-border shadow-md active:scale-[0.99]" href="#">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-start gap-3.5 min-w-0">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#4cd7f6]/20 to-[#4cd7f6]/5 border border-[#4cd7f6]/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(76,215,246,0.25)] text-[#4cd7f6] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">map</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="text-[15px] font-bold text-white group-hover:text-[#4cd7f6] transition-colors leading-snug truncate">Spot Gaming &amp; Peta</h3>
+<span class="px-2 py-0.5 rounded-full bg-[#4cd7f6]/20 text-[#4cd7f6] text-[10px] font-bold font-mono">MODUL 2</span>
+</div>
+<p class="text-[13px] text-on-surface-variant mt-0.5 leading-relaxed">GPS, peta OpenStreetMap, dan alamat spot LAN/Warnet.</p>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant group-hover:text-[#4cd7f6] group-hover:translate-x-0.5 transition-all pt-1">
+<span class="material-symbols-outlined text-[22px]">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-3 pt-1 flex-wrap">
+<span class="px-2.5 py-1 rounded-full bg-[#262b40] text-[#4cd7f6] font-mono text-[11px] flex items-center gap-1 border border-white/[0.06]">
+<span class="material-symbols-outlined text-[13px]">my_location</span>
+Geolocator + OSM
+</span>
+<span class="px-2.5 py-1 rounded-full bg-[#262b40] text-[#d0bcff] font-mono text-[11px] flex items-center gap-1 border border-white/[0.06]">
+<span class="material-symbols-outlined text-[13px]">pin_drop</span>
+Geocoding
+</span>
+</div>
+</a>
+</div>
+<!-- Section: Diagnostik Sistem -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-[#4cd7f6]">health_and_safety</span>
+<h2 class="text-[17px] font-bold text-white tracking-tight">Diagnostik Sistem</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#10b981]/15 text-[#34d399] border border-[#10b981]/30 font-mono text-[11px] font-bold">NORMAL</span>
+</div>
+<!-- System Diagnostic Box -->
+<div class="flex flex-col p-4 rounded-[22px] bg-[#171926] card-border shadow-md space-y-3">
+<!-- 3 Stat Tiles -->
+<div class="grid grid-cols-3 gap-2">
+<div class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-[#0f111c] border border-white/[0.06] text-center">
+<span class="material-symbols-outlined text-[18px] text-[#ff2a85] mb-1">storage</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">SQLite</span>
+<span class="text-[12px] font-bold text-white font-mono mt-0.5">Aktif</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-[#0f111c] border border-white/[0.06] text-center">
+<span class="material-symbols-outlined text-[18px] text-[#4cd7f6] mb-1">near_me</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Izin GPS</span>
+<span class="text-[12px] font-bold text-white font-mono mt-0.5">Diberikan</span>
+</div>
+<div class="flex flex-col items-center justify-center p-2.5 rounded-xl bg-[#0f111c] border border-white/[0.06] text-center">
+<span class="material-symbols-outlined text-[18px] text-[#d0bcff] mb-1">build_circle</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Build</span>
+<span class="text-[12px] font-bold text-white font-mono mt-0.5">1.0.0+1</span>
+</div>
+</div>
+<!-- Monospace GPS Coordinate Bar -->
+<div class="flex items-center justify-between px-3 py-2.5 rounded-xl bg-[#0d0f18] border border-white/[0.08]">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-[#ff2a85] flex-shrink-0">radar</span>
+<span class="font-mono text-[11px] text-on-surface-variant truncate">
+LAT: <span class="text-white font-semibold">-6.91750</span> | LON: <span class="text-white font-semibold">107.61910</span> | ACC: <span class="text-[#4cd7f6] font-semibold">4.5m</span>
+</span>
+</div>
+<button aria-label="Copy Coordinates" class="text-on-surface-variant hover:text-white flex-shrink-0 p-1" type="button">
+<span class="material-symbols-outlined text-[17px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Action Sync Telemetry CTA -->
+<button class="w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-[#1c1f30] to-[#251e36] border border-white/10 hover:border-[#ff2a85]/50 text-white font-bold text-[13px] active:scale-[0.99] transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[19px] text-[#ff2a85]">sync</span>
+<span class="tracking-wide">Sync Telemetri &amp; Refresh Sensor</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (SteamLog Hands-on 3 Tabs) -->
+<nav class="fixed bottom-0 inset-x-0 z-50 bg-[#0c0e17]/90 backdrop-blur-xl pb-safe border-t border-white/[0.06] shadow-[0_-8px_30px_rgba(0,0,0,0.6)]" data-active-classes="[&amp;_.nav-pill]:bg-[#ff2a85]/20 [&amp;_.nav-pill]:neon-pill-glow [&amp;_.nav-icon]:text-[#ff2a85] [&amp;_.nav-label]:text-[#ff2a85] [&amp;_.nav-label]:font-bold">
+<div class="flex justify-around items-center h-16 px-4 max-w-[428px] mx-auto">
+<!-- Tab 1: Beranda (Active) -->
+<a aria-current="page" class="flex flex-col items-center justify-center min-w-[72px] h-12 gap-0.5 group [&amp;_.nav-pill]:bg-[#ff2a85]/20 [&amp;_.nav-pill]:neon-pill-glow [&amp;_.nav-icon]:text-[#ff2a85] [&amp;_.nav-label]:text-[#ff2a85] [&amp;_.nav-label]:font-bold" data-path="beranda" href="#">
+<div class="nav-pill px-4 py-1 rounded-full transition-all duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant group-hover:text-[#ff2a85] transition-colors" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="nav-label text-[11px] text-on-surface-variant tracking-wide transition-colors">Beranda</span>
+</a>
+<!-- Tab 2: Catatan / Library -->
+<a class="flex flex-col items-center justify-center min-w-[72px] h-12 gap-0.5 group" data-path="catatan" href="#">
+<div class="nav-pill px-4 py-1 rounded-full transition-all duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant group-hover:text-[#ff2a85] transition-colors">menu_book</span>
+</div>
+<span class="nav-label text-[11px] text-on-surface-variant tracking-wide transition-colors">Catatan</span>
+</a>
+<!-- Tab 3: Lokasi -->
+<a class="flex flex-col items-center justify-center min-w-[72px] h-12 gap-0.5 group" data-path="lokasi" href="#">
+<div class="nav-pill px-4 py-1 rounded-full transition-all duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant group-hover:text-[#ff2a85] transition-colors">explore</span>
+</div>
+<span class="nav-label text-[11px] text-on-surface-variant tracking-wide transition-colors">Lokasi</span>
+</a>
+</div>
+<!-- iOS Home Indicator -->
+<div class="w-full flex justify-center pb-2">
+<div class="w-32 h-1 bg-white/20 rounded-full"></div>
+</div>
+</nav>
+<span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span>
+</body></html>
